@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <a href="/?Task=task1">Task 1</a>
     <a href="/?Task=task2">Task 2</a>
     <a href="/?Task=task3">Task 3</a>
     <a href="/?Task=task4">Task 4</a>

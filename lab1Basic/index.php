@@ -9,7 +9,7 @@ if (isset($_GET["Task"])) {
         include "Templates/error/404.php";
     }
 } else {
-    include 'Templates/Tasks/Task1.php';
+    include 'Templates/Tasks/Task2.php';
 }
 
 include 'Templates/Layout/footer.php';
