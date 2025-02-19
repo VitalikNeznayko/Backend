@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+}
+a{
+    text-decoration: none;
+}
+.task-container {
+  margin-left: 15px;
+}
+h2 {
+  margin: 0;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+.task-links {
+  display: flex;
+  flex-direction: row;
+}
+.task-links a {
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.task-links a:hover {
+  background: #ddd;
+}
+
+.task-container.link {
+  padding: 8px;
+  height: 33px;
+  text-decoration: none;
+  color: white;
+  background: #007bff;
+  border-radius: 5px;
+}
+
+.task-container.link:hover {
+  background: #3692f5;
+}
+
+.flags{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    a{
+        margin-left: 5px;
+    }
+}
+.tbl-calc{
+    border-collapse: collapse;
+    th{
+        background-color: yellow;
+        font-size: 25px;
+    }
+    th, td{
+        border: 1px solid black;
+    }
+}

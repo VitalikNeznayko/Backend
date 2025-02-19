@@ -17,7 +17,7 @@ switch ($symbol) {
     case 'а':
     case 'е':
     case 'є':
-    case 'и':
+    case 'и':   
     case 'і':
     case 'ї':
     case 'о':
