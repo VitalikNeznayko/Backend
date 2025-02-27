@@ -1,4 +1,4 @@
-<button onclick="ChangeTask()">Change task</button>
+<!-- <button onclick="ChangeTask()">Change task</button>
 <div class="task1">
     <?php
     function WriteContentsInFile($filename, $name, $comment)
@@ -71,8 +71,8 @@
             </tr>
         </table>
     <?php endif; ?>
-</div>
-<div class="task2 dp-none">
+</div> -->
+<div class="task2">
     <?php
 
     $filePath1 = 'Templates/Tasks/fileTask/files/file1.txt';
@@ -116,12 +116,12 @@
     function wordsMoreTwoTimes($contents1, $contents2, $path): array
     {
         $wordCounts1 = array_count_values($contents1);
-
         $wordCounts2 = array_count_values($contents2);
+
         $repeatedWords = [];
 
         foreach ($wordCounts1 as $word => $count) {
-            if (isset($wordCounts2[$word]) && ($count + $wordCounts2[$word]) > 2) {
+            if ($count >= 2 && isset($wordCounts2[$word]) && $wordCounts2[$word] >= 2) {
                 $repeatedWords[] = $word;
             }
         }
