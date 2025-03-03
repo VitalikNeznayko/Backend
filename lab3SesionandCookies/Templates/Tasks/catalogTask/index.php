@@ -2,7 +2,7 @@
 if (isset($_POST['login']) && isset($_POST['passwordUsers'])) {
     $login = 'Templates/Tasks/catalogTask/' . $_POST['login'];
     $password = $_POST['passwordUsers'];
-    setcookie('password', $password, time() + 3600 * 60 * 24, '/');
+    setcookie('password_'. $_POST['login'], $password, time() + 3600 * 60 * 24, '/');
     if (!file_exists($login)) {
         mkdir($login);
         mkdir($login . '/video');
@@ -17,35 +17,23 @@ if (isset($_POST['login']) && isset($_POST['passwordUsers'])) {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<h4>Створення директорії</h4>
 
-<body>
-    <h4>Створення директорії</h4>
-
-    <form action="" method="POST">
-        <table>
-            <tr>
-                <td>Логін:</td>
-                <td><input type="text" name="login"></td>
-            </tr>
-            <tr>
-                <td>Пароль:</td>
-                <td><input type="password" name="passwordUsers"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><button type="submit">Send</button></td>
-            </tr>
-        </table>
-    </form>
-    <a href="/?Page=catalogTask/delete">Видалити</a>
-</body>
-
-</html>
+<form action="" method="POST">
+    <table>
+        <tr>
+            <td>Логін:</td>
+            <td><input type="text" name="login"></td>
+        </tr>
+        <tr>
+            <td>Пароль:</td>
+            <td><input type="password" name="passwordUsers"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Send</button></td>
+        </tr>
+    </table>
+</form>
+<a href="/?Page=catalogTask/delete">Видалити</a>

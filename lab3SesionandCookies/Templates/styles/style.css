@@ -2,20 +2,15 @@ img {
   width: 300px;
   height: 300px;
 }
-.dp-none{
+
+.dp-none {
   display: none;
 }
-.task1 {
-  .block-comments {
-    border-collapse: collapse;
-    td {
-      border: 1px solid black;
-    }
-  }
-}
-.task2 {
-  table {
-    display: flex;
-    justify-content: center;
+
+.block-comments {
+  border-collapse: collapse;
+
+  td {
+    border: 1px solid black;
   }
 }

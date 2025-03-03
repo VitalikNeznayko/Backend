@@ -22,11 +22,11 @@ if (isset($_GET['logout'])) {
         <table>
             <tr>
                 <td>Login:</td>
-                <td><input type="text" name="login"></td>
+                <td><input type="text" value="<?= $_POST["login"] ?>" name="login"></td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="password" name="password"></td>
+                <td><input type="password" value="<?= $_POST["password"] ?>" name="password"></td>
             </tr>
             <tr>
                 <td></td>

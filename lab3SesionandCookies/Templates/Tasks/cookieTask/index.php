@@ -13,32 +13,19 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" || isset($_COOKIE['font'])) {
         } else if ($font === "big") {
             $font = "50px";
         }
-        setcookie("font", $_GET["lang"], time() + 3600 * 24 * 30 * 6, "/");
+        setcookie("font", $_GET["font"], time() + 3600 * 24 * 30 * 6, "/");
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div style="gap:15px;">
-        <a href="?<?= http_build_query(array_merge($_GET, ['font' => 'small'])) ?>">Маленький шрифт</a>
-        <a href="?<?= http_build_query(array_merge($_GET, ['font' => 'medium'])) ?>">Середній шрифт</a>
-        <a href="?<?= http_build_query(array_merge($_GET, ['font' => 'big'])) ?>">Великий шрифт</a>
-    </div>
-    <div style="font-size:<?= $font ?>;">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam dicta inventore minima eveniet? Dignissimos
-        voluptatibus quasi ex tempora rerum, accusantium vero nisi fugit unde architecto expedita cupiditate,
-        distinctio, aperiam quos.
-        Fugit et laborum sapiente quaerat asperiores distinctio temporibus odit vero nam placeat, veniam ut cupiditate
-        quis maxime, illo ratione nulla! A cumque unde odit iure quisquam molestias soluta, excepturi voluptate!
-    </div>
-</body>
-
-</html>
+<div style="gap:15px;">
+    <a href="?<?= http_build_query(array_merge($_GET, ['font' => 'small'])) ?>">Маленький шрифт</a>
+    <a href="?<?= http_build_query(array_merge($_GET, ['font' => 'medium'])) ?>">Середній шрифт</a>
+    <a href="?<?= http_build_query(array_merge($_GET, ['font' => 'big'])) ?>">Великий шрифт</a>
+</div>
+<div style="font-size:<?= isset($font) ? $font : "20px" ?>;">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam dicta inventore minima eveniet? Dignissimos
+    voluptatibus quasi ex tempora rerum, accusantium vero nisi fugit unde architecto expedita cupiditate,
+    distinctio, aperiam quos.
+    Fugit et laborum sapiente quaerat asperiores distinctio temporibus odit vero nam placeat, veniam ut cupiditate
+    quis maxime, illo ratione nulla! A cumque unde odit iure quisquam molestias soluta, excepturi voluptate!
+</div>

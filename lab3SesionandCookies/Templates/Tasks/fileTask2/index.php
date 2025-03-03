@@ -62,9 +62,9 @@ outputFile($filePath1);
 outputFile($filePath2);
 echo "</div>";
 
-$filePath_wordsOnlyFirstFile = 'Templates/Tasks/fileTask2/files/filesForFunction/wordsMoreTwoTimes.txt';
-$filePath_wordsTwoFiles = 'Templates/Tasks/fileTask2/files/filesForFunction/wordsOnlyFirstFile.txt';
-$filePath_wordsMoreTwoTimes = 'Templates/Tasks/fileTask2/files/filesForFunction/wordsTwoFiles.txt';
+$filePath_wordsMoreTwoTimes = 'Templates/Tasks/fileTask2/files/filesForFunction/wordsMoreTwoTimes.txt';
+$filePath_wordsOnlyFirstFile = 'Templates/Tasks/fileTask2/files/filesForFunction/wordsOnlyFirstFile.txt';
+$filePath_wordsTwoFiles = 'Templates/Tasks/fileTask2/files/filesForFunction/wordsTwoFiles.txt';
 $filePath_delete = $_POST['fileName'];
 ?>
 
