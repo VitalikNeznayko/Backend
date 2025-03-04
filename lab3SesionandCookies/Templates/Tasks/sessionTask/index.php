@@ -12,9 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['is_logged']);
-    header('Location: /');
+
+    $current_url = $_SERVER['REQUEST_URI'];
+    $url_parts = parse_url($current_url);
+    parse_str($url_parts['query'] ?? '', $query_params);
+    unset($query_params['logout']);
+
+    $new_url = $url_parts['path'] . '?' . http_build_query($query_params);
+
+    header('Location: ' . $new_url);
     die;
 }
+
 ?>
 <?php if (empty($_SESSION["is_logged"])) : ?>
     <?= $errormessage !== "" ? "<div style='color:red;'>$errormessage</div>" : "" ?>
@@ -34,8 +43,9 @@ if (isset($_GET['logout'])) {
             </tr>
         </table>
     </form>
+    
 <?php else : ?>
     <div>Hello Admin</div>
-    <a href="?logout=1">Exit</a>
+    <a href="?<?= http_build_query(array_merge($_GET, ["logout" => 1])) ?>">Exit</a>
 <?php
 endif; ?>
