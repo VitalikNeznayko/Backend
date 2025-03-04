@@ -8,8 +8,6 @@ if (isset($_GET["Page"])) {
         include $path;
     else
         include 'Templates/Tasks/catalogTask/index.php';
-} else {
-    include 'Templates/error/404.php';
 }
 
 include 'Templates/Layout/footer.php';
