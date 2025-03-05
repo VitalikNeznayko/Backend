@@ -7,7 +7,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 
     function deleteDir($dirPath)
     {
-        global $login, $password;
+        global $login;
         if (isset($_COOKIE["password$login"])) {
         }
         $files = glob($dirPath . '/*', GLOB_MARK); //пошук файлів, які знаходяться у даній директорії
