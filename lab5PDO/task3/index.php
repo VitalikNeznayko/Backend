@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         header("Location: index.php");
         die;
     }
-    if (isset($_POST["add"])){
+    if (isset($_POST["add"])) {
         header("Location: insert.php");
         die;
     }
@@ -72,23 +72,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             th,
             td {
-                border: 1px solid #ddd;
+                border: 1px solid gray;
                 padding: 8px;
                 text-align: center;
             }
 
             th {
-                background-color: #f2f2f2;
+                background-color: rgb(242, 242, 242);
                 font-size: 20px;
                 text-align: center;
             }
 
             tr:nth-child(odd) {
-                background-color: #f2f2f2;
+                background-color: rgb(242, 242, 242);
             }
 
             tr:hover {
-                background-color: #ddd;
+                background-color: gray;
             }
 
             td {

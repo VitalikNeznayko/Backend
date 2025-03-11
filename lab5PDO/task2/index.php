@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
         $_SESSION['selectedIds'] = implode(", ", $selectedIds);
     }
-    if (isset($_POST['save']) && !empty($selectedIds)){
+    if (isset($_POST['save']) && !empty($selectedIds)) {
         $selectedIds = explode(", ", $_SESSION['selectedIds']);
         foreach ($selectedIds as $id) {
             $selectedData[$id] = [
@@ -74,23 +74,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             th,
             td {
-                border: 1px solid #ddd;
+                border: 1px solid gray;
                 padding: 8px;
                 text-align: center;
             }
 
             th {
-                background-color: #f2f2f2;
+                background-color: rgb(242, 242, 242);
                 font-size: 20px;
                 text-align: center;
             }
 
             tr:nth-child(odd) {
-                background-color: #f2f2f2;
+                background-color: rgb(242, 242, 242);
             }
 
             tr:hover {
-                background-color: #ddd;
+                background-color: gray;
             }
 
             td {

@@ -34,7 +34,7 @@ class Student extends Human
 
     public function nextCourse()
     {
-        return $this->course++;
+        return ++$this->course;
     }
     public function getStudentInfo()
     {

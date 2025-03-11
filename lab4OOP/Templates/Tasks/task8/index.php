@@ -9,7 +9,6 @@ function autoload($class)
     }
 }
 
-
 spl_autoload_register("autoload");
 
 $programmer = new classes\Programmer("Vitalik", 180, 90, 19, ["C#", "C++", "PHP"], 3);
