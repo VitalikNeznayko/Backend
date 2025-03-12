@@ -61,7 +61,7 @@ $types = [
             }
 
             tr:hover {
-                background-color: gray;
+                background-color: lightgray;
             }
 
             td {

@@ -53,17 +53,17 @@ $types = [
             }
 
             th {
-                background-color:rgb(242, 242, 242);
+                background-color: rgb(242, 242, 242);
                 font-size: 20px;
                 text-align: center;
             }
 
             tr:nth-child(odd) {
-                background-color:rgb(242, 242, 242);
+                background-color: rgb(242, 242, 242);
             }
 
             tr:hover {
-                background-color: gray;
+                background-color: lightgray;
             }
 
             td {

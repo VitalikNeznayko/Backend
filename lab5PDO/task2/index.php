@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
         $_SESSION['selectedIds'] = implode(", ", $selectedIds);
     }
-    if (isset($_POST['save']) && !empty($selectedIds)) {
+    if (isset($_POST['save'])) {
         $selectedIds = explode(", ", $_SESSION['selectedIds']);
         foreach ($selectedIds as $id) {
             $selectedData[$id] = [
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             ];
         }
         changeRow($pdo, $selectedData);
-        header("Location: /");
+        header("Location: index.php");
         die;
     }
     if (isset($_POST["delete"])) {
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $selectedIds[] = $_POST["id"];
         }
         deleteRow($pdo, $selectedIds);
-        header("Location: /");
+        header("Location: index.php");
         die;
     }
     if (isset($_POST["add"])) {
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             }
 
             tr:hover {
-                background-color: gray;
+                background-color: lightgray;
             }
 
             td {

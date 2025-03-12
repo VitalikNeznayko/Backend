@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             }
 
             tr:hover {
-                background-color: gray;
+                background-color: lightgray;
             }
 
             td {
