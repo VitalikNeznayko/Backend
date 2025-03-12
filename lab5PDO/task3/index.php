@@ -27,15 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
         $_SESSION['selectedIds'] = implode(", ", $selectedIds);
     }
-    if (isset($_POST['save'])  && !empty($selectedIds)) {
+    if (isset($_POST['save'])) {
         $selectedIds = explode(", ", $_SESSION['selectedIds']);
         foreach ($selectedIds as $id) {
-            $selectedData[$id] = [
-                'id' => $_POST[$id]['id'],
-                'name' => $_POST[$id]['name'],
-                'position' => $_POST[$id]['position'],
-                'salary' => $_POST[$id]['salary']
-            ];
+            if (isset($_POST[$id])) {
+                $selectedData[$id] = [
+                    'id' => $_POST[$id]['id'],
+                    'name' => $_POST[$id]['name'],
+                    'position' => $_POST[$id]['position'],
+                    'salary' => $_POST[$id]['salary']
+                ];
+            }
         }
         changeRow($pdo, $selectedData);
         header("Location: index.php");

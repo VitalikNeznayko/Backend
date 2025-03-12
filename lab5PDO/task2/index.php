@@ -25,21 +25,27 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $selectedIds = $_POST["checkbox"];
         } else if (isset($_POST['id'])) {
             $selectedIds[] = $_POST["id"];
+        } else {
+            echo "<script>alert('Будь ласка, виберіть товар для редагування.');</script>";
+            exit;
         }
         $_SESSION['selectedIds'] = implode(", ", $selectedIds);
     }
     if (isset($_POST['save'])) {
         $selectedIds = explode(", ", $_SESSION['selectedIds']);
         foreach ($selectedIds as $id) {
-            $selectedData[$id] = [
-                'id' => $_POST[$id]['id'],
-                'name' => $_POST[$id]['name'],
-                'price' => $_POST[$id]['price'],
-                'count' => $_POST[$id]['count'],
-                'note' => $_POST[$id]['note']
-            ];
+            if (isset($_POST[$id])) {
+                $selectedData[$id] = [
+                    'id' => $_POST[$id]['id'],
+                    'name' => $_POST[$id]['name'],
+                    'price' => $_POST[$id]['price'],
+                    'count' => $_POST[$id]['count'],
+                    'note' => $_POST[$id]['note']
+                ];
+            }
         }
         changeRow($pdo, $selectedData);
+
         header("Location: index.php");
         die;
     }
