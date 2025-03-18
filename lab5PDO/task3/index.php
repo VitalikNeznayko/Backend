@@ -2,7 +2,7 @@
 session_start();
 require_once('delete.php');
 require_once('change.php');
-$pdo = new PDO('mysql:host=localhost;dbname=lab5;charset=utf8', 'homeuser', '123456');
+$pdo = new PDO('mysql:host=localhost;dbname=company_db;charset=utf8', 'homeuser', '123456');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $sql = "SELECT * FROM employees";
@@ -99,11 +99,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             }
 
         }
+
+        .con-statistics {
+            font-size: 18px;
+        }
     </style>
 </head>
 
 <body>
-    <h3>База даних з товарами</h3>
     <form action="" method="POST">
         <table class="bdtable">
             <tr>
@@ -160,7 +163,31 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         </table>
     <?php endif; ?>
     </form>
+    <?php
+    if (!isset($_POST['edit'])) {
+        echo "<h2>Статистика</h2>";
+        echo "<div class='con-statistics'>";
+        $sqlAvgSalary = "SELECT AVG(salary) AS average_salary FROM employees";
+        $sthAvg = $pdo->prepare($sqlAvgSalary);
+        $sthAvg->execute();
+        $avgSalary = $sthAvg->fetch(PDO::FETCH_ASSOC);
 
+        echo "<div>Середня зарплата всіх працівників: " . round($avgSalary['average_salary'], 2) . "</div>";
+
+        $sqlPositionCount = "SELECT position, COUNT(*) AS count FROM employees GROUP BY position";
+        $sthCount = $pdo->prepare($sqlPositionCount);
+        $sthCount->execute();
+        $positionCounts = $sthCount->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<p>Кількість працівників на кожній посаді:</p>";
+        echo "<ul>";
+        foreach ($positionCounts as $positionCount) {
+            echo "<li>" . $positionCount['position'] . ": " . $positionCount['count'] . "</li>";
+        }
+        echo "</ul>";
+    }
+    ?>
+    </div>
 </body>
 
 </html>
