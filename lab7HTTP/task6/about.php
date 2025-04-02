@@ -1,3 +1,4 @@
+<?php include 'traffic_logger.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 

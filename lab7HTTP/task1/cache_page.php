@@ -1,8 +1,5 @@
 <?php
 $cache_file = 'cache.html';
-if (file_exists($cache_file)) {
-    unlink($cache_file);
-}
 
 function generatePageContent($title, $text)
 {
@@ -16,6 +13,7 @@ function generatePageContent($title, $text)
 if (file_exists($cache_file) && http_response_code() == 200) {
     echo file_get_contents($cache_file);
 } else {
+    unlink($cache_file);
     ob_start();
 
     $content = generatePageContent("Some page", "Text");

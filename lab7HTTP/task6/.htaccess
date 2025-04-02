@@ -1,1 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ redirect_manager.php [QSA]
+
 ErrorDocument 404 /task6/404.php

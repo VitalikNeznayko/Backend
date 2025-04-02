@@ -73,6 +73,6 @@
 
     </div>
 </body>
-<script src="task1\js\async.js"></script>
+<script src="js\async.js"></script>
 
 </html>

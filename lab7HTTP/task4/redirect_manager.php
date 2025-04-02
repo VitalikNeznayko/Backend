@@ -16,5 +16,5 @@ if (isset($redirects[$request_url])) {
 }
 
 
-http_response_code(200);
+// http_response_code(200);
 include("index.php");
